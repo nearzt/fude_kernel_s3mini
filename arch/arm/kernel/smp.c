@@ -445,11 +445,12 @@ static DEFINE_PER_CPU(struct clock_event_device, percpu_clockevent);
 
 static void ipi_timer(void)
 {
-	struct clock_event_device *evt = &__get_cpu_var(percpu_clockevent);
-	evt->event_handler(evt);
+        struct clock_event_device *evt = &__get_cpu_var(percpu_clockevent);
+        evt->event_handler(evt);
 }
 
 #ifdef CONFIG_LOCAL_TIMERS
+
 asmlinkage void __exception_irq_entry do_local_timer(struct pt_regs *regs)
 {
 	struct pt_regs *old_regs = set_irq_regs(regs);
