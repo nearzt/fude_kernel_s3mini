@@ -1,4 +1,4 @@
-.gitignore
+!.gitignore
 patches/
 build/
-build.sh
+mkimg
