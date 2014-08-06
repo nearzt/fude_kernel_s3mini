@@ -1,5 +1,5 @@
 !.gitignore
 patches/
-build/
-mkimg
+output/
+build
 clean
