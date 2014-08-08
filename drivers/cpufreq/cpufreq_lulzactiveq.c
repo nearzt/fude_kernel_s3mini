@@ -38,10 +38,6 @@
 #include <linux/suspend.h>
 #include <linux/slab.h>
 
-//we have only 2 cores
-#define CONFIG_CPU_EXYNOS4210
-
-//a hack to make comparisons easier while having different structs in pegasusq and lulzactiveq
 #define hotplug_history hotplug_lulzq_history
 #define dvfs_workqueue dvfs_lulzq_workqueue
 
@@ -134,9 +130,8 @@ static unsigned long inc_cpu_load;
 
 /*
  * CPU freq will be decreased if measured load < dec_cpu_load;
- * not implemented yet.
  */
-#define DEFAULT_DEC_CPU_LOAD 40
+#define DEFAULT_DEC_CPU_LOAD 30
 static unsigned long dec_cpu_load;
 
 /*
@@ -189,12 +184,7 @@ static int get_jiffies_normalized(unsigned long rate)
 	return delay;
 }
 
-
-#ifndef CONFIG_CPU_EXYNOS4210
-#define RQ_AVG_TIMER_RATE	10
-#else
 #define RQ_AVG_TIMER_RATE	20
-#endif
 
 struct runqueue_data {
 	unsigned int nr_run_avg;
