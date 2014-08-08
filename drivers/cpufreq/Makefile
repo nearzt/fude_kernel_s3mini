@@ -50,3 +50,8 @@ obj-$(CONFIG_UX500_SOC_DB5500)		+= dbx500-cpufreq.o
 
 # Extra CPUFreq governors
 obj-$(CONFIG_CPU_FREQ_GOV_HOTPLUGX)	+= cpufreq_hotplugx.o
+obj-$(CONFIG_CPU_FREQ_GOV_PEGASUSQPLUS)	+= cpufreq_pegasusqplus.o
+obj-$(CONFIG_CPU_FREQ_GOV_SAKURACTIVE)  += cpufreq_sakuractive.o
+obj-$(CONFIG_CPU_FREQ_GOV_SMARTASS2)    += cpufreq_smartass2.o
+obj-$(CONFIG_CPU_FREQ_GOV_ABYSSPLUG)    += cpufreq_abyssplug.o
+obj-$(CONFIG_CPU_FREQ_GOV_LULZACTIVEQ)	+= cpufreq_lulzactiveq.o
